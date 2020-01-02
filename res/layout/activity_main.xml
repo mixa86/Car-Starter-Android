@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/loaderMessage"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/startingTimer"
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/startBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="582dp"
+        android:background="@drawable/oval_button"
+        android:text="Запуск"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startingTimer"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+    <WebView
+        android:id="@+id/webviewcontainer"
+        android:layout_width="420dp"
+        android:layout_height="147dp"
+        android:background="#fff"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/loaderMessage"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-6dp">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/oval_button_gray"
+        android:text="СТОП"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startBtn"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/checkBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/oval_button_cyan"
+        android:text="Check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startBtn"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/gpsBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/oval_button_gray"
+        android:text="gps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startBtn"
+        tools:ignore="MissingConstraints" />
+
+    <Switch
+        android:id="@+id/opener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
+        android:text="Открыть"
+        android:textOff="Открыть"
+        android:textOn="Закрыть"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startBtn"
+        app:layout_constraintVertical_bias="0.051"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/debugSms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="debug SMS"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColorHint="#B5868585"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opener"
+        app:layout_constraintVertical_bias="0.918"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="39dp" />
+
+    <Button
+        android:id="@+id/debugSmsApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Принять"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/debugSms"
+        app:layout_constraintTop_toBottomOf="@+id/stopBtn"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="403dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/debugSmsApply"
+        app:layout_constraintTop_toBottomOf="@+id/opener"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textEngineTemp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:text="Температура двигателя"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/engineTemp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center"
+                android:text="---"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/indoorTempText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:text="Температура в салоне"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/indoorTemp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center"
+                android:text="---"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/outdoorTempText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:text="Температура на улице"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/outdoorTemp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:background="@drawable/cell_shape"
+                android:gravity="center"
+                android:text="---"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+        </TableRow>
+
+    </TableLayout>
+
+    <com.yandex.mapkit.mapview.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/debugSmsApply"
+        app:layout_constraintTop_toBottomOf="@+id/opener"
+        app:layout_constraintVertical_bias="0.85"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
